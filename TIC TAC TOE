@@ -104,14 +104,15 @@
             for (const pattern of winPatterns) {
                 const [a, b, c] = pattern;
                 if (gameBoard[a] !== '' && gameBoard[a] === gameBoard[b] && gameBoard[a] === gameBoard[c]) {
-                    document.getElementById('message').textContent = `Player ${currentPlayer} wins!`;
+                    const winner = currentPlayer;
+                    alert(`Player ${winner} wins!`);
                     gameActive = false;
                     return;
                 }
             }
 
             if (!gameBoard.includes('')) {
-                document.getElementById('message').textContent = 'It\'s a tie!';
+                alert('It\'s a tie!');
                 gameActive = false;
             }
         }
